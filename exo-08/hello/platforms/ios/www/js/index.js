@@ -34,8 +34,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        document.getElementById('timestamp').innerHTML = new Date();
+        //document.getElementById('timestamp').innerHTML = new Date();
         app.deviceinfo();
+        app.contacts();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -64,13 +65,13 @@ var app = {
     checkConnection: function() {
         var networkState = navigator.connection.type;
         var states = {};
-        states[Connection.UNKNOWN] = 'UNKNOWN connection';
-        states[Connection.ETHERNET] = 'ETHERNET connection';
-        states[Connection.WIFI] = 'WIFI connection';
-        states[Connection.CELL_2G] = 'CELL_2G connection';
-        states[Connection.CELL_3G] = 'CELL_3G connection';
-        states[Connection.CELL_4G] = 'CELL_4G connection';
-        states[Connection.CELL] = 'CELL Generic connection';
+        states[Connection.UNKNOWN] = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI] = 'WiFi connection';
+        states[Connection.CELL_2G] = 'Cell 2G connection';
+        states[Connection.CELL_3G] = 'Cell 3G connection';
+        states[Connection.CELL_4G] = 'Cell 4G connection';
+        states[Connection.CELL] = 'Cell Generic connection';
         states[Connection.NONE] = 'No network connection';
         alert('Connection type: ' + states(networkState));
         document.addEventListener("online", this.checkConnection);
@@ -110,6 +111,7 @@ var app = {
             navigator.contacts.find(filter, onSuccess, onError, options);
         });
     }
+
 };
 
 app.initialize();

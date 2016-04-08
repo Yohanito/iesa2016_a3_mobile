@@ -38,18 +38,21 @@
     <body>
         <div class="app">
             <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
+            <div id="deviceready">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
                 <div id="timestamp"></div>
                 <div>Rechercher dans vos contacts
-                <input id="find"/><button id="findButton">Rechercher</button></div>
+                <input id="find"placeholder="Rechercher un contact"></input><button id="findButton">Rechercher</button></div>
+                <h3 id="name"></h3>
+                <p id="email"></p>
+                <p id="tel"></p>
                 <div id="deviceProperties">Loading Device properties...</div>
                 
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
